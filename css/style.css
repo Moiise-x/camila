@@ -41,6 +41,13 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
+/* Make every image scale with its container and preserve aspect ratio */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
 a {
   color: var(--color-primario);
   transition: 0.5s;
@@ -658,7 +665,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
-  height: 260px;
+  /* use aspect-ratio instead of fixed height so the item can grow/shrink */
+  aspect-ratio: 1 / 1;
   width: 100%;
   display: table;
   overflow: hidden;
@@ -666,7 +674,7 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 #portfolio .portfolio-item .details {
-  height: 260px;
+  height: 100%;
   background: var(--color-crema);
   display: table-cell;
   vertical-align: middle;
@@ -710,6 +718,16 @@ body.mobile-nav-active #mobile-nav-toggle {
   padding: 80px 0;
 }
 
+#testimonials .testimonial-item {
+  margin-bottom: 40px;
+}
+
+@media (max-width: 767px) {
+  #testimonials .quote {
+    padding: 0 15px;
+  }
+}
+
 #testimonials .profile {
   text-align: center;
 }
@@ -719,8 +737,10 @@ body.mobile-nav-active #mobile-nav-toggle {
   border: 6px solid var(--color-crema);
   margin-bottom: 15px;
   overflow: hidden;
-  height: 260px;
-  width: 260px;
+  /* responsive sizing - cap at 260px but allow shrink */
+  width: 100%;
+  max-width: 260px;
+  height: auto;
 }
 
 #testimonials .profile .pic img {
@@ -778,7 +798,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 #team .member .pic {
   margin-bottom: 15px;
   overflow: hidden;
-  height: 260px;
+  /* responsive square container */
+  width: 100%;
+  max-width: 260px;
+  height: auto;
 }
 
 #team .member .pic img {
