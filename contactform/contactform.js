@@ -101,6 +101,8 @@ jQuery(document).ready(function($) {
       success: function(msg) {
         // alert(msg);
         if (msg == 'OK') {
+          // show custom confirmation alert
+          alert('Mensaje enviado correctamente, te responderé en la brevedad posible');
           $("#sendmessage").addClass("show");
           $("#errormessage").removeClass("show");
           $('.contactForm').find("input, textarea").val("");
