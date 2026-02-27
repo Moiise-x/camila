@@ -102,11 +102,15 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 #hero .hero-logo {
-  margin: 20px;
+  margin: 20px auto;
+  display: inline-block; /* shrink to image width */
+  text-align: center;
 }
 
 #hero .hero-logo img {
   max-width: 100%;
+  display: block;
+  margin: 0 auto; /* centre inside its container */
 }
 
 #hero .hero-container {
